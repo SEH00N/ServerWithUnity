@@ -8,10 +8,18 @@ import { RowDataPacket } from 'mysql2/promise';
 export const lunchRouter = Router();
 
 lunchRouter.get('/lunch', async (req:Request, res:Response) => {
+    let date:string = req.query.date as string;
+    // const date:string = '20230703';
 
-    let arr:number[] = process.hrtime();
-    
-    const date:string = '20230703';
+    let result = await GetDataFromDB(date);
+    if(result != null)
+    {
+        let json = {date, menus: JSON.parse(result[0].menu)};
+        res.render('lunch', json);
+
+        return;
+    }
+
     const url:string = `https://ggm.hs.kr/lunch.view?date=${date}`;
 
     let html = await axios({ url: url, method: 'GET', responseType:'arraybuffer' });
@@ -25,12 +33,10 @@ lunchRouter.get('/lunch', async (req:Request, res:Response) => {
     let text:string = $('.menuName > span').text();
     let menus:string[] = text.split('\n').map(x => x.replace(/[0-9]+\./g, '')).filter(x => x.length > 0);
 
-    GetDataFromDB('20230723');
+    const json = { date, menus };
+    res.render('lunch', json);
 
-    let arr2:number[] = process.hrtime();
-    let secDelta = arr2[0] - arr[0];
-    let nanoDelta = arr2[1] - arr[1] + secDelta * 1000000000;
-    res.render('lunch', {menus: menus, date: date, time: nanoDelta});
+    await Pool.execute('INSERT INTO lunch(date, menu) VALUES(?, ?)', [date, JSON.stringify(menus)]);
 });
 
 async function GetDataFromDB(date:string)
