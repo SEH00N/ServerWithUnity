@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> 이도윤님을 위한 급식메뉴 </h1>
+<h4>{{date}}</h4>
+<ul>
+    {% for menu in menus %}
+        <li> {{menu}} </li>
+    {% endfor %}
+</ul>
+<p>{{time}}</p>
+{% endblock %}
