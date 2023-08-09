@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09.%20UI/common.uss?fileID=7433441132597879392&amp;guid=1fcdd74a6dc3ec34ba829d51a3d82f26&amp;type=3#common" />
+    <ui:VisualElement name="LunchContainer" class="window" style="flex-grow: 0; width: 500px; height: 400px; background-color: rgb(255, 255, 255); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+        <ui:VisualElement name="Header" style="flex-basis: 60px; flex-direction: row; padding-left: 5px; padding-right: 5px; padding-top: 7px; padding-bottom: 7px;">
+            <ui:TextField picking-mode="Ignore" name="DateTextField" style="flex-grow: 1;" />
+            <ui:Button text="Load" display-tooltip-when-elided="true" name="LoadButton" class="btn" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Content" style="flex-grow: 1; padding-left: 7px; padding-right: 7px; padding-top: 3px; padding-bottom: 3px;">
+            <ui:Label text="메뉴메뉴" display-tooltip-when-elided="true" name="LunchLabel" style="flex-grow: 1; background-color: rgb(219, 219, 219); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; color: rgb(0, 0, 0); padding-left: 12px; padding-right: 12px; padding-top: 8px; padding-bottom: 8px;" />
+            <ui:VisualElement name="MenuRow" style="flex-basis: 60px; flex-direction: row-reverse; align-items: center;">
+                <ui:Button text="닫기" display-tooltip-when-elided="true" name="CloseButton" class="btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

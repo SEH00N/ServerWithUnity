@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09.%20UI/common.uss?fileID=7433441132597879392&amp;guid=1fcdd74a6dc3ec34ba829d51a3d82f26&amp;type=3#common" />
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:VisualElement name="TopBar" style="flex-basis: 80px; background-color: rgb(192, 166, 178); flex-direction: row; justify-content: flex-end; align-items: center; padding-left: 20px; padding-right: 20px;">
+            <ui:Button text="점심메뉴" display-tooltip-when-elided="true" name="LunchButton" class="btn" />
+            <ui:Button text="인벤토리" display-tooltip-when-elided="true" name="InventoryButton" class="btn" />
+            <ui:Button text="로그인" display-tooltip-when-elided="true" name="LoginButton" class="btn" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Content" style="align-items: center; justify-content: center; flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="MessageContainer" style="position: absolute; right: 10px; bottom: 0;" />
+</ui:UXML>

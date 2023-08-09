@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09.%20UI/common.uss?fileID=7433441132597879392&amp;guid=1fcdd74a6dc3ec34ba829d51a3d82f26&amp;type=3#common" />
+    <ui:VisualElement name="LoginWindow" class="window" style="width: 500px; height: 250px; background-color: rgb(32, 32, 32); padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+        <ui:Label text="로그인" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 40px; color: rgb(229, 229, 229);" />
+        <ui:TextField picking-mode="Ignore" label="E-mail" name="EmailInput" class="inputField" style="flex-grow: 1;" />
+        <ui:TextField picking-mode="Ignore" label="Password" name="PasswordInput" password="true" class="inputField" style="flex-grow: 1;" />
+        <ui:VisualElement name="ButtonRow" style="justify-content: flex-end; flex-direction: row;">
+            <ui:Button text="로그인" display-tooltip-when-elided="true" name="OkButton" class="btn" />
+            <ui:Button text="취소" display-tooltip-when-elided="true" name="CancelButton" class="btn red" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

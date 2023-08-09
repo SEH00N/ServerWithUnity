@@ -7,10 +7,13 @@ import { MessageType, ResponseMSG } from './Types';
 export const userRouter = Router();
 
 userRouter.get('/user/login', async (req:Request, res:Response) => {
-    res.render('login');
+    // res.render('login');
+    // 구현 안함~
 });
 
 userRouter.post('/user/login', async (req:Request, res:Response) => {
+    let { email, password } : {email:string, password:string} = req.body;
+    console.log(email, password);
     
 });
 
