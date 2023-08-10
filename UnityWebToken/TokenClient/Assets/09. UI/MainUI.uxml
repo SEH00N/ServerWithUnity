@@ -5,8 +5,17 @@
             <ui:Button text="점심메뉴" display-tooltip-when-elided="true" name="LunchButton" class="btn" />
             <ui:Button text="인벤토리" display-tooltip-when-elided="true" name="InventoryButton" class="btn" />
             <ui:Button text="로그인" display-tooltip-when-elided="true" name="LoginButton" class="btn" />
+            <ui:VisualElement name="UserInfoPanel" class="widthzero" style="flex-direction: row; transition-property: width; transition-duration: 0.5s; transform-origin: right; overflow: hidden;">
+                <ui:Button text="유저정보" display-tooltip-when-elided="true" name="InfoButton" class="btn" />
+                <ui:Button text="로그아웃" display-tooltip-when-elided="true" name="LogoutButton" class="btn red" />
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Content" style="align-items: center; justify-content: center; flex-grow: 1;" />
     </ui:VisualElement>
     <ui:VisualElement name="MessageContainer" style="position: absolute; right: 10px; bottom: 0;" />
+    <ui:VisualElement name="UserPopOver" class="popover">
+        <ui:Label text="유저이름" display-tooltip-when-elided="true" name="NameLabel" class="info-label" />
+        <ui:Label text="이메일" display-tooltip-when-elided="true" name="EmailLabel" class="info-label" />
+        <ui:Label text="EXP" display-tooltip-when-elided="true" name="EXPLabel" class="info-label" />
+    </ui:VisualElement>
 </ui:UXML>

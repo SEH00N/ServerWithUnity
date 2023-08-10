@@ -1,9 +1,9 @@
 .btn {
     background-color: rgb(6, 55, 173);
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     color: rgb(255, 255, 255);
     border-left-color: rgb(0, 41, 140);
     border-right-color: rgb(0, 41, 140);
@@ -15,6 +15,7 @@
     border-bottom-right-radius: 5px;
     transition-property: background-color;
     transition-duration: 0.1s;
+    font-size: 16px;
 }
 
 .btn:hover {
@@ -82,7 +83,7 @@
     padding-right: 5px;
     padding-top: 8px;
     padding-bottom: 8px;
-    color: rgba(0, 0, 0, 255);
+    color: rgb(0, 0, 0);
 }
 
 .inputField > Label {
@@ -90,4 +91,71 @@
     -unity-font-style: bold;
     -unity-text-align: middle-right;
     right: 5%;
+}
+
+.widthzero {
+    width: 0;
+}
+
+.info-label {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -unity-font-style: bold;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 0;
+}
+
+.popover {
+    position: absolute;
+    width: 120px;
+    scale: 1 0;
+    transform-origin: top;
+    transition-property: scale;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(241, 155, 155);
+    border-right-color: rgb(241, 155, 155);
+    border-top-color: rgb(241, 155, 155);
+    border-bottom-color: rgb(241, 155, 155);
+}
+
+.slot {
+    width: 80px;
+    height: 80px;
+    background-image: url('project://database/Assets/04.Sprites/scifi_inventory01_box.png?fileID=21300000&guid=00b964a71c6f0ae4f8f206d5ca376dd4&type=3#scifi_inventory01_box');
+    -unity-slice-left: 8;
+    -unity-slice-top: 8;
+    -unity-slice-right: 8;
+    -unity-slice-bottom: 8;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slot:hover {
+    background-image: url('project://database/Assets/04.Sprites/scifi_inventory02_box_select01.png?fileID=21300000&guid=e7585f30aa72296478490edd0816f72a&type=3#scifi_inventory02_box_select01');
+    -unity-slice-left: 8;
+    -unity-slice-top: 8;
+    -unity-slice-right: 8;
+    -unity-slice-bottom: 8;
+}
+
+.item {
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public string Token {get; private set;}
+
     private void Awake()
     {
         if(Instance != null)
@@ -15,6 +18,12 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         NetworkManager.Instance = new NetworkManager(host, port);
+
+        Token = PlayerPrefs.GetString(LoginUI.TokenKey, string.Empty);
+        if(!string.IsNullOrEmpty(Token))
+        {
+            NetworkManager.Instance.DoAuth();
+        }
     }
 
     #region Debug
@@ -39,4 +48,10 @@ public class GameManager : MonoBehaviour
 
     }
     #endregion
+
+    public void DestroyToken()
+    {
+        PlayerPrefs.DeleteKey(LoginUI.TokenKey);
+        Token = String.Empty;
+    }
 }
