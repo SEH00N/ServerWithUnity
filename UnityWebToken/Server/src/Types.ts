@@ -27,3 +27,22 @@ export interface TokenUser
     xp:number,
     name:string
 }
+
+export interface ItemVO
+{
+    itemCode:number,
+    count:number,
+    slotNumber:number
+}
+
+export interface InventoryVO
+{
+    count:number,
+    list:ItemVO[]
+}
+
+export interface RankVO
+{
+    id:string,
+    level:number
+}

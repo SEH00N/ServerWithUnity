@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public string Token {get; private set;}
+    public bool IsLoggedIn = false;
 
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
 
         NetworkManager.Instance = new NetworkManager(host, port);
 
-        Token = PlayerPrefs.GetString(LoginUI.TokenKey, string.Empty);
+        Token = PlayerPrefs.GetString(LoginPanel.TokenKey, string.Empty);
         if(!string.IsNullOrEmpty(Token))
         {
             NetworkManager.Instance.DoAuth();
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void DestroyToken()
     {
-        PlayerPrefs.DeleteKey(LoginUI.TokenKey);
+        PlayerPrefs.DeleteKey(LoginPanel.TokenKey);
         Token = String.Empty;
     }
 }

@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09.%20UI/WoodenStick/WoodenStick.uss?fileID=7433441132597879392&amp;guid=21bfd0bc7a243994c83bdd747d780a9d&amp;type=3#WoodenStick" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(236, 236, 236);">
+        <ui:VisualElement name="Header" style="flex-shrink: 0; flex-basis: 20%; border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+            <ui:Label text="98강화 나무 몽둥이" display-tooltip-when-elided="true" name="TitleLabel" style="-unity-text-align: middle-center; color: rgb(0, 0, 0); font-size: 100px; -unity-font-style: bold; flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Contents" style="flex-grow: 1;">
+            <ui:VisualElement name="MenuPanel" style="flex-direction: row;">
+                <ui:Button text="로그아웃" display-tooltip-when-elided="true" name="LogoutButton" class="btn" />
+                <ui:Button text="동기화" display-tooltip-when-elided="true" name="RankButton" class="btn" />
+                <ui:Button text="자랑하기" display-tooltip-when-elided="true" name="PostButton" class="btn" />
+                <ui:Label text="돈 : 10000000000" display-tooltip-when-elided="true" name="MoneyLabel" style="color: rgb(0, 0, 0); -unity-text-align: middle-left; font-size: 64px; -unity-font-style: bold; margin-left: 50px;" />
+                <ui:VisualElement name="LoginPanel" class="disable" style="position: absolute; width: 100%; height: 100%; background-color: rgb(236, 236, 236); align-items: center; justify-content: space-around; flex-direction: row;">
+                    <ui:TextField picking-mode="Ignore" text=" 아이디" name="IDField" class="textField" />
+                    <ui:TextField picking-mode="Ignore" text=" 비번" name="PWField" class="textField" />
+                    <ui:Button text="로그인" display-tooltip-when-elided="true" name="LoginButton" class="btn" style="width: 500px; height: 80px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="GamePanel" style="flex-grow: 1;">
+                <ui:VisualElement name="Image" style="position: absolute; width: 512px; height: 512px; background-image: url(&apos;project://database/Assets/09.%20UI/WoodenStick/stick.png?fileID=21300000&amp;guid=cccd427cb6a266548bc9e2a98b6b88f4&amp;type=3#stick&apos;); right: 50px; bottom: 50px;">
+                    <ui:Label text="겁나 겁나 겁나 &#10;강한 몽둥이" display-tooltip-when-elided="true" name="NameLabel" enable-rich-text="true" style="color: rgb(0, 0, 0); font-size: 32px; -unity-text-align: lower-right; -unity-font-style: bold; top: -75px; white-space: normal; width: 500px; height: 100px; transform-origin: right bottom;" />
+                    <ui:Label text="Lv 30" display-tooltip-when-elided="true" name="LevelLabel" style="right: 20px; bottom: 20px; position: absolute; color: rgb(0, 0, 0); font-size: 64px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPanel" style="position: absolute; left: 30px; bottom: 30px;">
+                    <ui:Label text="1등\t강산 99렙&#10;2등\t강산 93렙" display-tooltip-when-elided="true" name="RankLabel" style="color: rgb(0, 0, 0); font-size: 60px; -unity-font-style: bold; bottom: 10px; transform-origin: right bottom;" />
+                    <ui:Label text="가격 : 1000000&#10;ㅁㄴㅇ" display-tooltip-when-elided="true" name="CostLabel" style="color: rgb(0, 0, 0); font-size: 60px; -unity-text-align: upper-center; -unity-font-style: bold;" />
+                    <ui:Button text="파괴방지권 구매" display-tooltip-when-elided="true" name="BuyButton" class="btn" />
+                    <ui:Button text="판매" display-tooltip-when-elided="true" name="SoldButton" class="btn" />
+                    <ui:Button text="업그레이드" display-tooltip-when-elided="true" name="UpgradeButton" class="btn" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

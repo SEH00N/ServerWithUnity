@@ -80,9 +80,6 @@ public class Dragger : MouseManipulator
         target.style.left = 0;
         target.style.top = 0;
 
-        target.RemoveFromHierarchy();
-        beforeSlot.Add(target);
-
-        // dropCallback?.Invoke(evt, target, beforeSlot);
+        dropCallback?.Invoke(evt, target, beforeSlot);
     }
 }

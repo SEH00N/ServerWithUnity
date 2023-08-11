@@ -7,6 +7,7 @@ import { tokenChecker } from './MyJWT';
 // router
 import { lunchRouter } from './LunchRouter';
 import { userRouter } from './UserRouter';
+import { invenRouter } from './inventoryRouter';
 
 // 익스프레스 어플리케이션 <- 이건 웹 서버
 let app:Application = express();
@@ -27,6 +28,7 @@ app.use(tokenChecker);
 
 app.use(lunchRouter);
 app.use(userRouter);
+app.use(invenRouter);
 
 app.listen(8081, () => {
     console.log(

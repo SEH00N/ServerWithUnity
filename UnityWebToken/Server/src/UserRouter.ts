@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { load, CheerioAPI } from 'cheerio';
 import { ResultSetHeader, RowDataPacket } from 'mysql2/promise';
 import { Pool } from './DB';
-import { MessageType, ResponseMSG, UserVO } from './Types';
+import { MessageType, RankVO, ResponseMSG, UserVO } from './Types';
 import { createJWt } from './MyJWT';
 
 export const userRouter = Router();
@@ -80,4 +80,33 @@ userRouter.post('/user/register', async (req:Request, res:Response) => {
 
     let msg:ResponseMSG = {type:MessageType.SUCCESS, message: "성공적으로 회원가입이 되었습니다."};
     res.json(msg);
+});
+
+userRouter.get('/user/rank', async (req:Request, res:Response) => {
+    const sql = `SELECT u.name, r.* FROM users AS u, ranking AS r WHERE u.id = r.user_id ORDER BY score DESC LIMIT 0,3`;
+    //const sql = `SELECT * FROM ranking ORDER BY score DESC LIMIT 0,3`;
+    let [rows, col]:[RowDataPacket[], any] = await Pool.query(sql);
+    
+    let json = {rankingList:rows.map(row => ({id:row.name, level:row.score}))};
+    
+    res.json({type:MessageType.SUCCESS, message:JSON.stringify(json)});
+});
+
+userRouter.post('/user/rank', async (req:Request, res:Response) => {
+    if(req.user == null)
+    {
+        res.json({type:MessageType.ERROR, message:"권한이 없습니다."});
+        return;
+    }
+    const user = req.user;
+    let data = JSON.parse(req.body.json);
+    let level = data.level;
+
+    console.log(level);
+
+    const sql = `INSERT INTO ranking(user_id, score, created) VALUES (?, ?, NOW())`;
+
+    await Pool.execute(sql, [user.id, level]);
+
+    res.json({type:MessageType.SUCCESS, message:"기록완료."})
 });

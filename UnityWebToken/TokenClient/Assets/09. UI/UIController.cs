@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public enum Windows {
     Lunch = 1,
@@ -12,6 +13,8 @@ public enum Windows {
 public class UIController : MonoBehaviour
 {
     public static UIController Instance;
+
+    public List<ItemSO> itemList;
 
     [SerializeField] VisualTreeAsset lunchUIAsset;
     [SerializeField] VisualTreeAsset loginUIAsset;
@@ -81,6 +84,18 @@ public class UIController : MonoBehaviour
         InventoryUI invenUI = new InventoryUI(invenRoot, itemTemplate);
         invenUI.Close();
         windowDictionary.Add(Windows.Inven, invenUI);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            int idx = Random.Range(0, itemList.Count);
+
+            InventoryUI inven = windowDictionary[Windows.Inven] as InventoryUI;
+            inven.AddItem(itemList[idx], 3);
+        }
+
     }
 
     private void OnOpenInvenHandle(ClickEvent evt)

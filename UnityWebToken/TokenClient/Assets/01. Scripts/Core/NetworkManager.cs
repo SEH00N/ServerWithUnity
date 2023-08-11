@@ -66,7 +66,7 @@ public class NetworkManager
 
         if (req.result != UnityWebRequest.Result.Success)
         {
-            UIController.Instance.Message.AddMessage($"요청이 실패했습니다. {req.responseCode} Error on post", 3f);
+            // UIController.Instance.Message.AddMessage($"요청이 실패했습니다. {req.responseCode} Error on post", 3f);
             yield break;
         }
 
@@ -81,7 +81,8 @@ public class NetworkManager
         GetRequest("user", "", (type, json) => {
             if(type == MessageType.SUCCESS) {
                 UserVO user = JsonUtility.FromJson<UserVO>(json);
-                UIController.Instance.SetLogin(user);
+                // UIController.Instance.SetLogin(user); //수업내용
+                UIManager.Instance.LoginPanel.SetLogin(); // 내꺼
                 Debug.Log(json);
             }
         });

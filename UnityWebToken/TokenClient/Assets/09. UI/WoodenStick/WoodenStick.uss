@@ -1,0 +1,34 @@
+.btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 32px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -unity-font-style: bold;
+    background-color: rgba(79, 79, 79, 255);
+    color: rgba(255, 255, 255, 255);
+}
+
+.disable {
+    display: none;
+    visibility: hidden;
+}
+
+.textField {
+    height: 75%;
+    width: 30%;
+    font-size: 34px;
+}
+
+.textField > #unity-text-input {
+    background-color: rgba(42, 42, 42, 255);
+    color: rgb(210, 210, 210);
+}
